@@ -19,10 +19,10 @@
 * down
 * such as
 * Things that did *not* work out too great yet:
- * Affix
- * Other sandbox types
- * "Compatibility" with "nicer" tech like SSH/HTTPS/...?
-* Outreach, organic growth and possible limits
+  * Affix
+  * Other sandbox types
+  * "Compatibility" with "nicer" tech like SSH/HTTPS/...?
+* Outreach, organic growth and possible limits*
 
 
 # fogwc abouts and whens

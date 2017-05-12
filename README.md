@@ -22,7 +22,7 @@
   * Affix
   * Other sandbox types
   * "Compatibility" with "nicer" tech like SSH/HTTPS/...?
-* Outreach, organic growth and possible limits*
+* Outreach, organic growth and possible limits
 
 
 # fogwc abouts and whens

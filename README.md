@@ -8,6 +8,7 @@
 * The components (Tsumiki)
 * Open source! Reusable! (GitHub)
 * Offspring: Sensibility (MESS'16, Usenix Login, SenSys)
+* Cross-platform, high-level (all of the above)
 
 ### Other ideas
 * Your
@@ -16,7 +17,12 @@
 * mine
 * further
 * down
-
+* such as
+* Things that did *not* work out too great yet:
+ * Affix
+ * Other sandbox types
+ * "Compatibility" with "nicer" tech like SSH/HTTPS/...?
+* Outreach, organic growth and possible limits
 
 
 # fogwc abouts and whens

@@ -1,0 +1,95 @@
+%% This file is based on Michael Shell's
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{color}
+
+\newcommand{\cappos}[1]{\textcolor{red}{[Justin: #1]}}
+
+\definecolor{dkgreen}{rgb}{0,0.60,0}
+\newcommand{\albert}[1]{\textcolor{dkgreen}{[Albert: #1]}}
+\newcommand{\lukas}[1]{\textcolor{blue}{[Lukas: #1]}}
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{Practical Fog Computing With Seattle\\
+(Five Pages Excluding References)}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Albert}
+\IEEEauthorblockA{NYU Tandon}
+\and
+\IEEEauthorblockN{Lukas}
+\IEEEauthorblockA{NYU Tandon}
+\and
+\IEEEauthorblockN{Justin}
+\IEEEauthorblockA{NYU Tandon}}
+
+% make the title area
+\maketitle
+
+\input{abstract}
+
+\input{intro}
+\input{related}
+\input{architecture}
+\input{implementation}
+\input{deployment}
+\input{conclusion}
+
+\bibliography{}
+
+\end{document}
+
+

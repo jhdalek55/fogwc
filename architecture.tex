@@ -1,11 +1,8 @@
 %!TEX root = paper.tex
 \section{System Architecture}
 
-We discuss in this section the governing principles behind Seattle's
-segmentation of functionality into self-sufficient yet interoperable
-components.
 An important insight for Seattle as a platform is how the classical
-dichotomy of platform operators and users gives way to multi-faceted
+dichotomy of service platform operators and users gives way to multi-faceted
 trust relationships between a large number of mutually-unrelated
 stakeholders.
 In Seattle, the actual edge-based software installs, core infrastructure
@@ -15,23 +12,32 @@ groups of people, potentially untrusted (or even unknown) between groups
 and among members of the same group.
 % Then why/how do people trust each other in such a system?
 
-
-\subsection{Goals And Design Principles}
-
-From the above we can see that the system architecture must be able
-to keep the needs of the various parties apart. To facilitate this,
-components are designed along these trust boundaries.
-
-Not all components are strictly required for Seattle's functioning.
+This gives rise to a set of components, any of which is useful
+by itself, that can be freely combined to implement various
+deployment models, from pure peer-to-peer operation up to a
+provisioned deployment by a dedicated operator. Furthermore,
+new components may be introduced freely to replace or augment
+existing ones, as long as the component interfaces are adhered to.
 
 
+Figure TODO overviews Seattle's components and interfaces.
 
-\albert{...for breaking things into interoperable components. These are a subset of foggish goals (which might include performance isolation etc.)}
+Sandbox: core element of computation. Self-isolating.
+
+Resource manager (nodemanager): demultiplex SB users, some SB isolation too (chroot).
+
+Device manager (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
+
+Experiment manager (seash): We call user code ``experiments'' for historical reasons.
+
+And that's it, this is an infrastructure-less deployment already!
+You want more? Here you go.
+
+Installer builder: where you get installer from; lets you plant pubkeys.
+
+Clearinghouse: well....
+
+Lookup service: a centralized meta-meeting point.
 
 
-\albert{Roughly: 1, separate along trust boundaries. 2, make parts self-sustainable and useful by themselves. 3, stable inter-component interfaces. 4, flexible UIs.}
-
-
-\subsection{Components}
-\albert{These guys implement additional foggish goals.}
 

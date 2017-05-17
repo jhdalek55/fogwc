@@ -31,3 +31,8 @@
 * Reg May 25
 * Sub June 1
 * Not Aug 15
+
+
+# Related Works
+[Google IoT cloud](https://cloudplatform.googleblog.com/2017/05/introducing-Google-Cloud-IoT-Core-for-securely-connecting-and-managing-IoT-devices-at-scale.html/) -- Newly launched Google Cloud service to publish data gathered from IoT devices, e.g. sensors and process that data leveraging in-house analytic services ([Google Cloud Dataflow](https://cloud.google.com/dataflow/), [Google BigQuery](https://cloud.google.com/bigquery/), [Google Cloud Machine Learning Engine](https://cloud.google.com/bigquery/)).
+

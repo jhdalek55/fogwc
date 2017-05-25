@@ -23,21 +23,37 @@ infrastructure.
 
 \paragraph{A survey on IoT communication and computation frameworks: An industrial perspective}\cite{7868354}
 Surveys state of the art fog computing and embedded systems platforms, reviews a high-level conceptual layered architecture for IoT from a computational perspective
+(IEEE paywalled)
 
 \paragraph{Integration of Cloud computing and Internet of Things: A survey}\cite{botta_integration_2016}
 Literature study of the CloudIoT paradigm and its applications and challenges
+Very high level, no concrete implementations.
 
 \paragraph{Key ingredients in an IoT recipe: Fog Computing, Cloud computing, and more Fog Computing}\cite{yannuzzi_key_2014}
 Reviews technologies for IoT and Fog/Cloud applications, focuses on mobility; reliable control and actuation; and scalability
+Mostly not on fog IMHO; very broad fog domain including core network; claims superior
+adaptivity, scalability etc. for fog, but not substantiated. \albert{Let's skip this one.}
+
 
 \paragraph{Fog Computing: A Taxonomy, Survey and Future Directions}\cite{mahmud_fog_2016}
 Presents taxonomy of Fog computing according to the identified challenges and its key features
+Fog as the middle layer between cloud and IoT. Broad fog domain that includes core network.
+Resources are heterogeneous, low computational power, probably not even general-purpose computing.
+Assumes a ``telco''/managed setup with service level agreements (SLAs), associated cost.
+§8.5 mentions programming platform (i.e. our sandbox and libraries). Auth, crypto, privacy
+as sub-topice of the ``paid-for'' aspects. Mentions context, something that we really suck at.
+§11.3 federation/interoperability, ``self-customization'';
+``In existing
+literature although many unique Fog nodes architecture have been proposed, the real
+interoperable architecture of Fog nodes are still required to be investigated.''
+§11.6 multi-tenancy.
 
 
 \subsection{Systems/Applications}
 
 \paragraph{Fog Computing: Principles, Architectures, and Applications}\cite{dastjerdi_fog_2016}
 Presents reference architecture for Fog computing and recent related development and applications
+\albert{I have no idea what this paper wants to tell us.}
 
 \paragraph{A gateway based fog computing architecture for wireless sensors and actuator networks \cite{7423332}}
 Presents key architecture requirements: master nodes, slave nodes; virtual gateway function -, flow- and resource-management
@@ -45,6 +61,12 @@ Presents key architecture requirements: master nodes, slave nodes; virtual gatew
 
 \paragraph{Fog Computing: Platform and Applications} \cite{yi_fog_2015}
 Analyzes the goals and challenges in fog computing platform, and presents platform design and prototype fog computing platform, with an example application (simple multi-party chatting application)
+Are we talking about the same (HotWebs) paper? Here it's a face recognition
+experiment with local fog and Amazon cloud (and I think they mess it up --
+so much better latency and bandwidth, and then the response times are 100 vs
+800 ms. I could not care less.) Other than that, good bits in here!
+A fitting definition in II.B, weaknesses such as vendor lock-in in III,
+and an actual implementation/experiment.
 
 \paragraph{Google IoT cloud}
 ``https://cloudplatform.googleblog.com/2017/05/introducing-Google-Cloud-IoT-Core-for-securely-connecting-and-managing-IoT-devices-at-scale.html/'' Newly launched Google Cloud service to publish data gathered from IoT devices, e.g. sensors and process that data leveraging in-house analytic services like Google Cloud Dataflow, Google BigQuery, Google Cloud Machine Learning Engine.
@@ -69,6 +91,10 @@ Proposes IoT testbed with modular hardware and software architecture to enable e
 
 \paragraph{Foggy clouds and cloudy fogs: a real need for coordinated management of fog-to-cloud computing systems}\cite{masip-bruin_foggy_2016}
 Presents a layered fog-to-cloud architecture to coordinate management between the fog and the cloud, e.g. for smart cities, smart transportation, and smart homes
+A person faints, their (unspecified) device pages cars and traffic lights in the vicinity,
+which in turn call the ambulance and notify the hospital, and everything can be done with
+less latency when parallelized using an optimal cloud/fog coordinator. I'm sold!
+\albert{No, thanks.}
 
 \paragraph{Dynamic Urban Surveillance Video Stream Processing Using Fog Computing} \cite{chen_dynamic_2016}
 Presents real-time information processing and decision making for urban video surveillance

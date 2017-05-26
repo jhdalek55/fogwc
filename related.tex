@@ -23,7 +23,45 @@ infrastructure.
 
 \paragraph{A survey on IoT communication and computation frameworks: An industrial perspective}\cite{7868354}
 Surveys state of the art fog computing and embedded systems platforms, reviews a high-level conceptual layered architecture for IoT from a computational perspective
-(IEEE paywalled)
+
+Ubiquitously connected smart devices (wearables, smart metering, smart home/city, connected vehicles, wireless sensor networks.
+Cloud computing: can provide ``elastic'' resources to edge devices
+vs.
+Fog computing: enables computing directly at edge of network - edge routers could become new servers.
+Fog examples from the industry:
+Cloudlet: cloud in a box (a server?) can be used by nearby mobile devices.
+Cisco's IOx: VMs for connected grid routers (can execute python and compile code) - (maybe worth a closer look?)
+
+Some definition keywords: huge numbers, heterogeneous, wireless, autonomous, ubiquitous, decentralized, communicate, cooperate, storage, processing, services in sandboxed environment (oho?)
+
+Similar (overlapping) concepts: mobile cloud computing, mobie-edge computing --> fog combines the two
+more use cases: connected vehicles, smart grid, wireless sensor and actuator networks, SDNs
+more specific:
+- Augmented Reality to reduce processing/transmission latency (references implementation using Google Glass and Cloudlet)
+- Real time video processing for traffic cameras``privacy-preserving techniques can also be applied'' (no refs)
+- Content Delivery and Caching (references one work)
+- Mobile Big Data Analytic - like cloud but without latency (no refs)
+
+Issues:
+Networking issues can be fixed with SDN and NFV
+- Authentication should be solved by Public Key Infrastructure and Trusted Execution Environment
+- Privacy concerns should be resolved by homomorphic encryption and differential privacy
+- Intrusion detection: ``intrusion detection systems can be deployed on either host machine, VM and hypervisor''
+
+Misc:
+- ``we need unified interfacing and programming model'' (I agree, but someone should really conceptualize them)
+- Cites a couple of Computation Offloading works
+- A few words on application aware provisioning and on resource discovery and sharing, but not much other than that it is critical
+
+Money:
+``Cloud provisioning cannot be prosperous without a sustainable business model'' (oho?), scenarios:
+- ISPs/carriers construct in-house fog
+- cloud service providers expand to the edge
+- end users trade/lease their computation/storage to service providers
+
+\lukas{Mostly interesting for fog definition, some shallowly described applications, and the lack of platform discussion}
+
+
 
 \paragraph{Integration of Cloud computing and Internet of Things: A survey}\cite{botta_integration_2016}
 Literature study of the CloudIoT paradigm and its applications and challenges
@@ -118,4 +156,3 @@ Presents a Distributed Dataflow computing model for IoT in Fog and Cloud that ea
 
 \paragraph{Policy-driven security management for fog computing: Preliminary framework and a case study} \cite{dsouza_policy-driven_2014}
 Proposes policy-based management of resources in fog computing for secure collaboration and interoperabil{}ity between different user-requested resources in fog computing
-

@@ -12,14 +12,15 @@ groups of people, potentially untrusted (or even unknown) between groups
 and among members of the same group.
 % Then why/how do people trust each other in such a system?
 
-This gives rise to a set of components, any of which is useful
+This gives rise to a set of components~\cite{Cappos2009},
+any of which is useful
 by itself, that can be freely combined to implement various
 deployment models, from pure peer-to-peer operation up to a
 provisioned deployment by a dedicated operator. Furthermore,
 new components may be introduced freely to replace or augment
 existing ones, as long as the component interfaces are adhered to.
-
-
+We briefly introduce the default components below.
+\albert{And yes, they are widely deployed! See section such-and-such!}
 
 \begin{figure}
   \centering
@@ -31,21 +32,60 @@ existing ones, as long as the component interfaces are adhered to.
 
 
 Figure~\ref{fig:arch} overviews Seattle's components and interfaces.
-\cite{Cappos2009} for the arch!
+%The components fall into three categories: device software,
+%infrastructure, and control.
 
-Sandbox: core element of computation. Self-isolating.
-\cite{RepySandbox,li2015fence} for the tech!
+We first introduce the components running on all devices that
+run Seattle.
+The core element of computation is a restricted,
+performance- and security-isolated Python-based
+\textit{Sandbox}~\cite{RepySandbox,li2015fence}.
+The sandbox \gls{API} provides
+networking, file, threading, etc. functions to
+experiments\footnote{
+Following Seattle's research and educational background, we
+call code that is executed in sandboxes an ``experiment'',
+regardless of its actual nature.}.
 
-Resource manager (nodemanager): demultiplex SB users, some SB isolation too (chroot).
+The \textit{Resource Manager} isolates % chroots, effectively!
+sandboxes that run in
+parallel, and interfaces with them on behalf of authorized remote
+parties to start or stop them, upload and download data, reset
+sandboxes, or transfer ownership. (The sandboxes on one
+device might all have different authorized users if so desired,
+so that one Seattle node can serve multiple experimenters.)
 
-Device manager (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
+The \textit{Device Manager} % (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
+is the device owner's interface to enable or disable Seattle on
+the device, and choose the amount of resources that it may consume.
 
-Experiment manager (seash): We call user code ``experiments'' for historical reasons.
+A \textit{Software Updater} keeps all components of the
+device software up to date. This concludes the overview of
+device-side Seattle components.
+\\
 
-And that's it, this is an infrastructure-less deployment already!
-You want more? Here you go.
+To control the fundamental functions of sandboxes (such as
+starting to execute code, or downloading collected data),
+an \textit{Experiment Manager} % (seash)
+is used. The experiment manager contacts sandboxes through the
+resource manager interface programmatically, and provides a
+human-usable interface to the experimenter. The experimenter
+authenticates against sandboxes by using cryptographic keys.
+
+Every experimenter runs an experiment manager, and possesses
+their own set of cryptographic keys. This enables interesting
+deployment options (and thus applications):
+Two experimenters could choose to mutually authenticate the
+other on the sandboxes they control, or swap resources, and
+so on; making more sandboxes available to an experiment than
+a single experimenter could ever reach.
+\\
 
 Installer builder: where you get installer from; lets you plant pubkeys.
+
+This sums up all of the Seattle components required for a self-hosted,
+infrastructure-less deployment already.
+
 
 Clearinghouse: well....
 

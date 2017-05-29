@@ -49,6 +49,7 @@
 
 \usepackage{glossaries}
 \newglossaryentry{fc}{name={Fog Computing},description={is edge-based computing, or a middle layer between Internet of Things and The Cloud, or both.}}
+\newacronym{VM}{VM}{Virtual Machine}
 
 \newcommand{\cappos}[1]{\textcolor{red}{[Justin: #1]}}
 
@@ -83,15 +84,12 @@
 \maketitle
 
 \input{abstract}
-
 \input{intro} % which includes related work
 \input{architecture}
 \input{implementation} % which includes deployment
 \input{conclusion}
 
-\bibliography{references}
-\bibliography{seattle_us}
-\bibliography{seattle_them}
+\bibliography{references,seattle_us,seattle_them}
 \bibliographystyle{plain}
 
 \end{document}

@@ -1,3 +1,21 @@
 %!TEX root = paper.tex
 \section{Introduction And Related Work}
 
+The contributions of this paper are as follows:
+We present Seattle, a practical platform for \gls{fc} research
+with a real-world deployment on heterogeneous nodes,
+including desktop and laptop machines, Android devices,
+and routers and embedded devices running OpenWrt.
+%Seattle nodes host Python-based \glspl{VM} that can run
+%general-purpose code on a variety of platforms,
+%and which self-isolate so as to not
+%affect the safety and performance of the host node.
+Seattle's system architecture caters to a variety of use cases,
+ranging from peer-to-peer deployments to full-fledged
+provisioning by a dedicated operator, and cooperative setups
+where different stakeholders federate multiple parallel running
+instances of services.
+Our own deployment of Seattle has been used in multiple contexts
+including research~\cite{troubleshoot,li2015fence,rafetseder2013sensorium,zhuang2014sensibility,Eisl1010:Service,Tuts1010:Sustained,collares2011smart,zhuang2015privacy,cappos2014blursense} and education~\cite{Wallace_CCSC_2011,Cappos_CCSCCP_2010,Cappos_CCSCNW_2009,Cappos_SIGCSE_2014,Hooshangi_SIGCSE_2015};
+other groups have successfully reused and augmented Seattle components
+for their purposes~\cite{chard2010social,chard12ssc,caton2014social,muller2014tomato,tomato,eittenberger2012doubtless,zhuang2012distributed,zhuang2014taking,tredger2013building}.

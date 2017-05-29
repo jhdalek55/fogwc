@@ -56,10 +56,10 @@ device might all have different authorized users if so desired,
 so that one Seattle node can serve multiple experimenters.)
 
 The \textit{Device Manager} % (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
-is the device owner's interface to enable or disable Seattle on
-the device, and choose the amount of resources that it may consume.
+is the device owner's interface to enable or disable this Seattle
+install, and choose the amount of resources that it may consume.
 
-A \textit{Software Updater} keeps all components of the
+The \textit{Software Updater} keeps all components of the
 device software up to date. This concludes the overview of
 device-side Seattle components.
 \\
@@ -81,15 +81,25 @@ so on; making more sandboxes available to an experiment than
 a single experimenter could ever reach.
 \\
 
-Installer builder: where you get installer from; lets you plant pubkeys.
+Seattle's device software and an initial set of cryptographic
+keys controlling the sandboxes are shipped in the form of a bundled
+installer for the specific platform \gls{OS}.
+The \textit{Installer Builder} component is responsible for
+packaging the code and public keys.
+The installer builder allows experimenters to create their own
+custom installers, where they get to choose the public key or keys
+that are included in the installer package. Every custom installer
+can be referenced through its specific, static \gls{URL}.
+Thus, device owners can choose which experimenters to grant
+access to sandboxes on their devices initially.
+\\
 
-This sums up all of the Seattle components required for a self-hosted,
-infrastructure-less deployment already.
-
-
-Clearinghouse: well....
+%This sums up all of the Seattle components required for a
+%self-hosted, infrastructure-less deployment already.
 
 Lookup service: a centralized meta-meeting point.
+
+Clearinghouse: well....
 
 
 

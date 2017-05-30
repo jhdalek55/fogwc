@@ -62,6 +62,8 @@ install, and choose the amount of resources that it may consume.
 The \textit{Software Updater} keeps all components of the
 device software up to date. This concludes the overview of
 device-side Seattle components.
+%Other components are run either by experimenters, or
+%infra-ops, or how should we say this so that it's exact?
 \\
 
 To control the fundamental functions of sandboxes (such as
@@ -109,5 +111,19 @@ the experimenter's public key at the lookup service, and then
 proceeds to contact every resource manager that hosts sandboxes
 that the experimenter can control.
 
+Lastly, Seattle provides a \textit{Clearinghouse} which is a
+centralized sandbox-sharing site. As motivated earlier,
+sandboxes can be swapped; a clearinghouse can act as a trusted
+intermediary on behalf of all registered experimenters, and creates
+a large pool of sandboxes without requiring all experimenters to
+set up mutual trust relationships amongst each others.
+The clearinghouse uses the same resource manager interfaces as the
+experiment manager does, and provides a human-usable interface to
+experimenters. The clearinghouse implements internal policies
+that govern the exact rules for swapping sandboxes between
+registered experimenters.
 
-
+This concludes the overview of Seattle components. Our live deployment
+of Seattle includes implementations of all components, including a
+clearinghouse that offers free access to an initial set of sandboxes
+for all registered experimenters.

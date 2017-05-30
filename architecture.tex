@@ -30,6 +30,7 @@ We briefly introduce the default components below.
 \end{figure}
 
 
+\subsection{Components}
 
 Figure~\ref{fig:arch} overviews Seattle's components and interfaces.
 %The components fall into three categories: device software,
@@ -127,3 +128,28 @@ This concludes the overview of Seattle components. Our live deployment
 of Seattle includes implementations of all components, including a
 clearinghouse that offers free access to an initial set of sandboxes
 for all registered experimenters.
+
+
+
+
+\subsection{Roles, or perhaps: Deployment Options?}
+
+The preceding section implicitly introduced different roles found in
+a Seattle deployment. We revisit these roles to illustrate different
+deployment options that Seattle enables.
+\albert{Alternatively: Let's talk about different deployments, and what roles get assigned to whom.}
+
+Home alone: device owner is experimenter is perhaps builder op.
+no CH nor lookup.
+
+P2P: perhaps an own installer builder, no CH nor lookup,
+oob trust between experimenters (and probably device owners)
+
+Seattle: use all components; most operated by us
+
+Sensibility, Social Compute Cloud: all components, some replaced/modified
+and operated by ST
+
+A Big Fun Telco Setup: all components, multiple times. Federated CHs.
+No renegade resource swapping here! CHs as obligatory, centralized trust
+anchors.

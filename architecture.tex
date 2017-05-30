@@ -97,9 +97,17 @@ access to sandboxes on their devices initially.
 %This sums up all of the Seattle components required for a
 %self-hosted, infrastructure-less deployment already.
 
-Lookup service: a centralized meta-meeting point.
-
-Clearinghouse: well....
+The default Seattle architecture also includes a
+\textit{Lookup Service}. This is a generic network-accessible
+key/value store that the resource manager and experiment manager
+can use to announce and retrieve information about sandboxes.
+For instance, a resource manager announces its contact information
+(such as its or a NAT forwarder's IP address and port number) under
+the public keys of all currently authorized experimenters.
+The experiment manager retrieves the contact information by looking up
+the experimenter's public key at the lookup service, and then
+proceeds to contact every resource manager that hosts sandboxes
+that the experimenter can control.
 
 
 

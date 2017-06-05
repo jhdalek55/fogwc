@@ -43,9 +43,12 @@
 
 \documentclass[conference]{IEEEtran}
 \usepackage{cite}
-\usepackage{subcaption}
+\usepackage{graphicx}
 \usepackage{url}
 \usepackage{color}
+
+\usepackage{glossaries}
+\loadglsentries{acronyms}
 
 \newcommand{\cappos}[1]{\textcolor{red}{[Justin: #1]}}
 
@@ -60,8 +63,8 @@
 
 \begin{document}
 
-\title{Practical Fog Computing With Seattle\\
-(Five Pages Excluding References)}
+\title{Practical Fog Computing With Seattle,\\
+One Drop At A Time (5 Pgs. Excl. References)}
 
 
 % author names and affiliations
@@ -80,15 +83,12 @@
 \maketitle
 
 \input{abstract}
-
-\input{intro}
-\input{related}
+\input{intro} % which includes related work
 \input{architecture}
-\input{implementation}
-\input{deployment}
+\input{implementation} % which includes deployment
 \input{conclusion}
 
-\bibliography{references}
+\bibliography{references,seattle_us,seattle_them}
 \bibliographystyle{plain}
 
 \end{document}

@@ -29,5 +29,5 @@
 
 * [Web](https://www.fogworldcongress.com/cfp)
 * Reg May 25
-* Sub June 1
+* Sub **June 15**
 * Not Aug 15

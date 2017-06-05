@@ -95,7 +95,7 @@ Presents reference architecture for Fog computing and recent related development
 
 \paragraph{A gateway based fog computing architecture for wireless sensors and actuator networks \cite{7423332}}
 Presents key architecture requirements: master nodes, slave nodes; virtual gateway function -, flow- and resource-management
-
+\albert{Lukas suggests to skip this high-level/vague one.}
 
 \paragraph{Fog Computing: Platform and Applications} \cite{yi_fog_2015}
 Analyzes the goals and challenges in fog computing platform, and presents platform design and prototype fog computing platform, with an example application (simple multi-party chatting application)
@@ -111,6 +111,7 @@ and an actual implementation/experiment.
 
 \paragraph{Feasibility of Fog Computing Deployment based on Docker Containerization over RaspberryPi} \cite{bellavista_feasibility_2017}
 Presents practical (as opposed to prevalent architecture and methodological approaches in the literature) experience with Kura gateway (open source IoT framework) and Docker-based containerization on RaspberryPIs
+Has an implementation! Mentions VANET use case. Perhaps most similar to us in terms of componentized platform with potentially-replacable components.
 
 \paragraph{Evaluation of Docker as Edge computing platform}\cite{ismail_evaluation_2015}
 Evaluates docker for fog computing focusing on deployment and termination, resource and service management, fault tolerance and caching
@@ -130,6 +131,7 @@ Presents service architecture for emergency alert system using smart phones. (Fo
 
 \paragraph{Design and Deployment of an IoT Application-Oriented Testbed}\cite{belli_design_2015}
 Web of things testbed to design and evaluate services/applications in a real IoT environment solely based on standard protocols and network interfaces
+Identifies IoT as siloed, calls for openness and standardization of interfaces. Much similar to our discussions about ``webifying'' Seattle components to make them interoperable with other things. Good one! Mentions the Constrained Application Protocol CoAP (RFC7252) which we should read too.
 
 \paragraph{HomeCloud: An edge cloud framework and testbed for new application delivery} \cite{pan_homecloud:_2016}
 Proposes a fog framework that integrates Network Function Virtualization (NFV) and Software-Defined Networking (SDN)
@@ -163,6 +165,8 @@ Presents Adaptive Operations Platform (AOP) for end-to-end manageability of indu
 
 \paragraph{Developing IoT applications in the Fog: A Distributed Dataflow approach} \cite{giang_developing_2015}
 Presents a Distributed Dataflow computing model for IoT in Fog and Cloud that eases the development of IoT/Fog applications
+Focuses on a ``perception--action'' cycle, e.g. in building automation where a sensor can signal ``this room is empty now'' so that the lights are turned off. In their programming model ``distributed data flow'', you specify constraints (including locations) for computations.
 
 \paragraph{Policy-driven security management for fog computing: Preliminary framework and a case study} \cite{dsouza_policy-driven_2014}
-Proposes policy-based management of resources in fog computing for secure collaboration and interoperabil{}ity between different user-requested resources in fog computing
+Proposes policy-based management of resources in fog computing for secure collaboration and interoperability between different user-requested resources in fog computing
+\albert{Lukas says skip, but revisit for Sensibility/blur things.}

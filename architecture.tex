@@ -93,7 +93,8 @@ The installer builder allows experimenters to create their own
 custom installers, where they get to choose the public key or keys
 that are included in the installer package. Every custom installer
 can be referenced through its specific, static \gls{URL}.
-Thus, device owners can choose which experimenters to grant
+Thus, by selecting and installing a specific packaged installer,
+device owners can choose which experimenters to grant
 access to sandboxes on their devices initially.
 \\
 
@@ -132,12 +133,23 @@ for all registered experimenters.
 
 
 
-\subsection{Roles, or perhaps: Deployment Options?}
+\subsection{Deployment Alternatives}
+\albert{...in which neither ``deployment'' nor ``alternatives'' are
+quite the words I'm looking for.}
+The preceding section implicitly introduced different roles relevant
+in the Seattle architecture:
+\textit{device owners} control whether and how they participate
+in Seattle, so as to provide sandboxes to the platform;
+\textit{experimenters} use these sandboxes to run their code
+on remote devices;
+lastly, there are \textit{operator} roles for various components
+of the infrastructure.
 
-The preceding section implicitly introduced different roles found in
-a Seattle deployment. We revisit these roles to illustrate different
-deployment options that Seattle enables.
-\albert{Alternatively: Let's talk about different deployments, and what roles get assigned to whom.}
+Central point: These needn't be the same persons.
+limited and clearly-defined trust boundaries.
+
+This enables different deployments (!?) as discussed below.
+
 
 Home alone: device owner is experimenter is perhaps builder op.
 no CH nor lookup.

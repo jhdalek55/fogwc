@@ -48,6 +48,7 @@ Following Seattle's research and educational background, we
 call code that is executed in sandboxes an ``experiment'',
 regardless of its actual nature.}.
 
+\albert{This is a hypervisor++!}
 The \textit{Resource Manager} isolates % chroots, effectively!
 sandboxes that run in
 parallel, and interfaces with them on behalf of authorized remote
@@ -55,6 +56,7 @@ parties to start or stop them, upload and download data, reset
 sandboxes, or transfer ownership. (The sandboxes on one
 device might all have different authorized users if so desired,
 so that one Seattle node can serve multiple experimenters.)
+\albert{Does NAT traversal!}
 
 The \textit{Device Manager} % (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
 is the device owner's interface to enable or disable this Seattle
@@ -151,27 +153,44 @@ in Seattle, so as to provide sandboxes to the platform;
 on remote devices;
 lastly, there are \textit{operators} for various components
 of the infrastructure.
-Thanks to the limited and clearly-defined boundaries of Seattle
-components, there are few requirements on mutual trust between
+These roles match what most existing \gls{fc} architectures
+foresee.
+However, the limited and clearly-defined boundaries of Seattle
+components result in few requirements on mutual trust between
 the actual persons acting in these roles. This enables deployment
 scenarios including and exceeding the often-assumed centrally managed
 and operated \gls{fc} setups.
 
 For instance, in a local experimental deployment, the owner of all
-devices might serve as the experimenter at the same time.
+devices might serve as the experimenter at the same time. Since
+existing Experiment Managers and Installer Builders can be reused
+from existing deployments, no additional effort is involved in
+setting up the infrastructure.
+A setup on exclusively-controlled, all-local devices can serve as
+a testbed for research, and enables device owners to run an
+OwnCloud-like \gls{fc} setup on their equipment.
 
-Researchers in their e.g.
+The approach also scales to groups of device owners that federate
+to share resources on (parts of) their setups. Trust relationships
+among the researchers and the device owners do not require a
+Clearinghouse as the trusted intermediary, but can be set up out-of-band.
 
-Home alone: device owner is experimenter is perhaps builder op.
-no CH nor lookup.
+Another realization may use all of the components described above.
+This gives a sponsored set of sandbox resources to start with,
+a clearinghouse to mediate access between contributed sandboxes
+and registered researches, and all of the auxiliary services
+discussed. The current deployment of Seattle is an example for
+this: We operate instances of all components; further instances
+(particularly of sandboxes on remote nodes) are contributed and
+operated by volunteers.
 
-P2P: perhaps an own installer builder, no CH nor lookup,
-oob trust between experimenters (and probably device owners)
-
-Seattle: use all components; most operated by us
-
-Sensibility, Social Compute Cloud: all components, some replaced/modified
-and operated by ST
+Sensibility Testbed~\cite{zhuang2014sensibility} and Social Compute
+Cloud~\cite{caton2014social} provide a similar breadth in capabilities
+as Seattle. However, they only operate their own Clearinghouse
+implementations (with user interfaces and policy implementations
+different from Seattle's). Sensibility also provides a new sandbox
+type that allows privacy-preserving access to sensors on Android
+smartphones and tablets.
 
 A Big Fun Telco Setup: all components, multiple times. Federated CHs.
 No renegade resource swapping here! CHs as obligatory, centralized trust

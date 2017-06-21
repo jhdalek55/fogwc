@@ -1,5 +1,5 @@
 %!TEX root = paper.tex
-\section{Implementation and Practical Deployment}
+\section{Implementation}
 
 In this section we will look at the actual implementations of
 selected components, with a focus on those aspects that help
@@ -19,7 +19,7 @@ across \glspl{OS} and devices. Seattle's platform abstractions
 provide a unified \gls{API} to sandboxes on desktops and laptops,
 but als smartphones and even WiFi routers. Seattle sandboxes
 run on Windows, Mac OS X and later, Linux, the \glspl{BSD}, as
-well as Android and OpenWrt / LEDE.
+well as Android and OpenWrt.
 
 Seattle's resource isolation scheme~\cite{li2015fence} ensures
 that each sandbox is confined to strict usage quotas for all
@@ -46,8 +46,8 @@ Linux Containers.
 
 \subsection{Component Interface Implementation}
 
-At the core of addressing operational heterogeneity (see
-Section~\ref{such-and-such}) lie clearly-defined interfaces
+At the core of flexibly addressing operational heterogeneity (see
+Section~\ref{sec-op-flex}) lie clearly-defined interfaces
 that use simple, mostly stateless protocols.
 
 Postel's Robustness Principle~\cite[\S2.10]{rfc793}.

@@ -1,55 +1,93 @@
 %!TEX root = paper.tex
 \section{Introduction And Related Work}
 
-In recent years the term ``fog computing'' has been established to describe
-cloud computing at the edge of the network. Fog networks are typically
-characterized by the large number of geographically distributed nodes, ranging
-from embedded systems, e.g. network connected
-sensors, to smartphones as well as end-user laptops
-\cite{Bonomi:2012:FCR:2342509.2342513,Yi:2015:SFC:2757384.2757397}.
+In recent years, \gls{fc} has established itself as an approach to
+Cloud Computing at the edge of the network. Fog systems are typically
+characterized by the large number of geographically distributed
+nodes, ranging
+from embedded systems like network connected
+sensors to smartphones and end-user laptops
+\cite{Bonomi:2012:FCR:2342509.2342513,Yi:2015:SFC:2757384.2757397,dastjerdi_fog_2016}.
 While leveraging the
 ubiquitous availability and specific capabilities of such devices brings
 many opportunities, it also bears new challenges unknown to traditional cloud
-services. Some of these challenges include the heterogeneity of fog nodes,
+services. Some of these challenges include the heterogeneity of fog
+nodes~\cite{Bonomi:2012:FCR:2342509.2342513,7868354,Yi:2015:SFC:2757384.2757397,mahmud_fog_2016},
 their accessibility, e.g. behind private networks, and extended security and
 privacy requirements \cite{botta_integration_2016}.
-Opportunities as well as the challenges have been widely addressed in the
-respective literature, however implementations, let alone actively deployed and
-publicly available platforms that can be used in the fog context, are rare. \\ \\
 
-For instance in~\cite{bellavista_feasibility_2017} the authors investigate the
-applicability of docker containers for fog computing. The work uses and extends
-the Open Source Kura framework to create IoT gateways that control the information
-flow between fog nodes and the cloud, while also reviewing and benchmarking
-different container related technologies used in the fog nodes.
-The focus of the work tends towards IoT computing, where tailored services run
-on fog nodes to gather data that is forwarded to to cloud for further processing.
-A similiar evaluation of docker containers for edge computing can be found in
+Also, existing proposed \gls{fc} architectures have been described
+as ``siloed''~\cite{belli_design_2015}, referring to the lack of
+open interfaces that characterize today's Fog devices and infrastructures.
+Furthermore, opportunities and challenges have been widely addressed in the
+respective literature from a theoretical point of view, but actual \gls{fc}
+implementations --- let alone actively deployed and
+publicly available platforms that can be used in Fog contexts --- are rare.
+We review aspects of the rich existing literature below, and then
+proceed to introduce our platform Seattle.
+
+
+\subsection{Related Work}
+
+Emerging technologies are a prospective area for research in \gls{fc}.
+Bellavista et al.~\cite{bellavista_feasibility_2017} investigate the
+applicability of Docker containers for \gls{fc}. The work uses and extends
+the open-source Kura framework to create \gls{IoT} gateways that control the information
+flow between Fog nodes and the Cloud, while also reviewing and benchmarking
+different container related technologies used in the Fog nodes.
+The focus of the work tends towards \gls{IoT} computing, where tailored services run
+on Fog nodes to gather data that is forwarded to the Cloud for further processing.
+A similar evaluation of Docker containers for edge computing can be found in
 \cite{ismail_evaluation_2015}.
 
-Others have contributed fog platforms for very specific use cases, e.g.
+Others have contributed Fog platforms for very specific use cases, e.g.
 an emergency alert system using smartphones that propagate alerts to nearby
-emergency departments \cite{7134091}; or an ``Adaptive Operations Platform''
-to effectively apply equipment failure models in the context of industrial
-IoT \cite{gazis_components_2015}.
+emergency departments \cite{7134091}; an idea also treated by Masip
+et al.~\cite{masip-bruin_foggy_2016}. Gazis et al. propose an ``Adaptive
+Operations Platform''
+to effectively apply equipment failure models in the context of Industrial
+\gls{IoT} \cite{gazis_components_2015}.
+Amrutur et al.\cite{amrutur_open_2017} discuss ``smart city''
+applications. Vehicular use cases, including ones that are based on
+ad-hoc networks, are presented by Bitam et al.~\cite{bitam_vanet-cloud:_2015}
+and Truong et al.\cite{truong_software_2015}.
 
-On the other hand there are implementations that address specific individual
-fog computing issues, like Dsouza et al. who propose a framework for
-policy management to authenticate the various actors in, e.g. smart
+Apart from individual use cases, some implementations address specific individual
+\gls{fc} issues, like Dsouza et al. who propose a framework for
+policy management to authenticate the various actors in applications
+such as smart
 transportation systems \cite{dsouza_policy-driven_2014}.
+Yi et al.~\cite{yi_fog_2015}, besides pointing out vendor lock-in
+as a possible problem for \gls{fc}, attempt to exploit locality
+in a real-world experiment with face recognition software.
 
-Additionally, proprietary business \lukas{Is there an adjective for `... that costs money'?} solutions exist: Cisco IOx promotes a
+In addition to academic work, commercial business solutions exist:
+Cisco IOx~\cite{cisco_iox} promotes a
 system that allows traditional Linux application development on
-Cisco IOS powered networking devices\cite{cisco_iox}.
-And Google recently released ``Google IoT cloud'', which sells a system for
-cloud based device management and a protocol bridge to connect edge nodes to,
-e.g. cloud analytic systems\cite{google_iot_core}.
+Cisco IOS powered networking devices.
+Google recently released ``Google \gls{IoT} cloud'' which sells a system for
+cloud based device management and a protocol bridge to connect edge nodes to
+Cloud analytic systems~\cite{google_iot_core} and other infrastructure.
 
-\lukas{Albert suggests to also reference \cite{belli_design_2015}}
+Finally, there are different stances on operational aspects of
+\gls{fc} platforms. Some authors assume a centrally-managed and
+operated approach, perhaps including monetarization~\cite{mahmud_fog_2016,7868354}, whereas others~\cite{belli_design_2015}
+call for open interfaces and interoperability so that many
+Fogs can coexist and provide federated services.
 
-In contrast, Seattle does not only specify a flexible FOSS platform architecture,
-is also has over 8 years of experience of operating a general-purpose
-infrastructure used among others for network research and education.
+As will be discussed shortly, our platform Seattle offers a practical,
+useable sandbox implementation that tackles the widely-acknowledged
+node heterogeneity issue in \gls{fc}. Furthermore, Seattle's components
+are designed for loose coupling and precise trust boundaries, so as to
+enable multi-stakeholder operations. This enables deployments with
+minimal mutual trust requirements, out of the box.
+We have an active, live, and publicly accessible deployment of all
+Seattle components described in this paper. All software is
+\acrlong{FOSS}, and available from public
+repositories\footnote{\url{https://github.com/SeattleTestbed}}.
+
+
+\subsection{Contributions}
 
 The contributions of this paper are as follows:
 We present Seattle, a practical platform for \gls{fc} research

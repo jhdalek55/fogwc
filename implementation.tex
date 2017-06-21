@@ -1,9 +1,60 @@
 %!TEX root = paper.tex
 \section{Implementation and Practical Deployment}
 
-\subsection{In-House Implementations}
+In this section we will look at the actual implementations of
+selected components, with a focus on those aspects that help
+Seattle solve the node and operational heterogeneity
+challenges encountered in \gls{fc}.
 
-Talk about how the sandbox achieves foggish goals: portability, isolation.
+\subsection{Sandbox Implementation}
+
+% Inspired by the repy_v2/README that I wrote a few weeks back.
+Seattle's Python-based default sandbox~\cite{RepySandbox}
+offers a cross-platform portable, resource-isolated,
+safe execution environment for untrusted experimenter code.
+
+The choice of a high-level programming language environment trades
+off some reduction in performance against large gains in portability
+across \glspl{OS} and devices. Seattle's platform abstractions
+provide a unified \gls{API} to sandboxes on desktops and laptops,
+but als smartphones and even WiFi routers. Seattle sandboxes
+run on Windows, Mac OS X and later, Linux, the \glspl{BSD}, as
+well as Android and OpenWrt / LEDE.
+
+Seattle's resource isolation scheme~\cite{li2015fence} ensures
+that each sandbox is confined to strict usage quotas for all
+resources of the hosting system, including \gls{CPU} time and
+memory, used disk space, and even \gls{IP} addresses and port numbers
+on network interfaces.
+
+In terms of code safety, Seattle keeps buggy or deliberately destructive
+experimenter code from harming the host machine. This is guaranteed
+by first checking the static code safety and forbidding potentially
+problematic statements (like importing arbitrary modules). At runtime,
+all of the \gls{API} functions strictly check their call parameters
+(so that, e.g., file names can be sanitized and restricted to the
+sandbox directory).
+
+There exist other sandbox implementations that augment Seattle's.
+Sensibility Testbed adds sensor functions to Seattle's Python-based
+sandbox; an internal research prototype of ours interfaces the
+Seattle Resource Manager with Docker, so that its sandboxes are
+Linux Containers.
+
+
+
+
+\subsection{Component Interface Implementation}
+
+At the core of addressing operational heterogeneity (see
+Section~\ref{such-and-such}) lie clearly-defined interfaces
+that use simple, mostly stateless protocols.
+
+Postel's Robustness Principle~\cite[\S2.10]{rfc793}.
+
+
+\subsection{To Do}
+\albert{Rather ``Random Leftover Notes'' I guess.}
 
 Mention device manager and practical problems like NAT.
 

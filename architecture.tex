@@ -135,15 +135,7 @@ for all registered experimenters.
 
 
 
-\subsection{Deployment Alternatives}
-\albert{...in which neither ``deployment'' nor ``alternatives'' are
-quite the words I'm looking for.}
-\lukas{what about...\\
-``The Seattle Universe''\\
-``Deployment Flexibility''\\
-``Unbound Operations''\\
-``A Loosly Coupled Infrastructure''
-}
+\subsection{Operational Flexibility}
 
 The preceding section implicitly introduced different roles relevant
 in the Seattle architecture:
@@ -156,26 +148,29 @@ of the infrastructure.
 These roles match what most existing \gls{fc} architectures
 foresee.
 However, the limited and clearly-defined boundaries of Seattle
-components result in few requirements on mutual trust between
-the actual persons acting in these roles. This enables deployment
+components result in few requirements on mutual trust or, indeed,
+interaction between
+the actual persons acting in these roles. This enables operational
 scenarios including and exceeding the often-assumed centrally managed
 and operated \gls{fc} setups.
 
 For instance, in a local experimental deployment, the owner of all
-devices might serve as the experimenter at the same time. Since
-existing Experiment Managers and Installer Builders can be reused
+devices might serve as the experimenter at the same time. If
+the Experiment Managers and Installer Builders can be reused
 from existing deployments, no additional effort is involved in
 setting up the infrastructure.
 A setup on exclusively-controlled, all-local devices can serve as
-a testbed for research, and enables device owners to run an
+a testbed for research, or enables device owners to run an
 OwnCloud-like \gls{fc} setup on their equipment.
 
-The approach also scales to groups of device owners that federate
-to share resources on (parts of) their setups. Trust relationships
-among the researchers and the device owners do not require a
-Clearinghouse as the trusted intermediary, but can be set up out-of-band.
+The approach also scales to groups of device owners and experimenters
+that federate
+to share resources on (parts of) their setups. No trusted
+intermediary in the form of a Clearinghouse is required:
+trust relationships among the researchers and the device owners
+can be set up out-of-band as well.
 
-Another realization may use all of the components described above.
+Another realization may provide all of the components described above.
 This gives a sponsored set of sandbox resources to start with,
 a clearinghouse to mediate access between contributed sandboxes
 and registered researches, and all of the auxiliary services
@@ -186,12 +181,19 @@ operated by volunteers.
 
 Sensibility Testbed~\cite{zhuang2014sensibility} and Social Compute
 Cloud~\cite{caton2014social} provide a similar breadth in capabilities
-as Seattle. However, they only operate their own Clearinghouse
-implementations (with user interfaces and policy implementations
-different from Seattle's). Sensibility also provides a new sandbox
+as Seattle. However, they only operate a partial infrastructure, and
+reuse much of Seattle's. Their own Clearinghouse
+implementations have user interfaces and policy implementations
+different from Seattle's. Sensibility also provides a new sandbox
 type that allows privacy-preserving access to sensors on Android
-smartphones and tablets.
+smartphones and tablets. Other components, including the Experiment
+Manager, are reused
 
-A Big Fun Telco Setup: all components, multiple times. Federated CHs.
-No renegade resource swapping here! CHs as obligatory, centralized trust
-anchors.
+Finally, we envision that multiple central operators (as often
+assumed in \gls{fc}) could set up their own instances of
+all components, and then federate using Seattle's open interfaces
+to barter or trade resources. % With due thanks to Peter Reichl from whom I borrowed the formulation.
+Operator-specific Clearinghouses serve as centralized trust
+anchors, and ``experiments'' would rather be ``apps'' for
+end users; with the former Experimenters as over-the-top service or
+software providers.

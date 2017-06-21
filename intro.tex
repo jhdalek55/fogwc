@@ -5,48 +5,49 @@ In recent years the term ``fog computing'' has been established to describe
 cloud computing at the edge of the network. Fog networks are typically
 characterized by the large number of geographically distributed nodes, ranging
 from embedded systems, e.g. network connected
-sensors, to smartphones as well as end-user laptops.
-~\cite{Bonomi:2012:FCR:2342509.2342513,Yi:2015:SFC:2757384.2757397}
+sensors, to smartphones as well as end-user laptops
+\cite{Bonomi:2012:FCR:2342509.2342513,Yi:2015:SFC:2757384.2757397}.
 While leveraging the
 ubiquitous availability and specific capabilities of such devices brings
 many opportunities, it also bears new challenges unknown to traditional cloud
 services. Some of these challenges include the heterogeneity of fog nodes,
 their accessibility, e.g. behind private networks, and extended security and
-privacy requirements.~\cite{botta_integration_2016}
+privacy requirements \cite{botta_integration_2016}.
 Opportunities as well as the challenges have been widely addressed in the
 respective literature, however implementations, let alone actively deployed and
 publicly available platforms that can be used in the fog context, are rare. \\ \\
 
-For instance \cite{bellavista_feasibility_2017} investigates the applicability of
-docker containers for fog computing. The work uses and extends the Open Source Kura
-framework to create IoT gateways that control the information
-flow between fog nodes and the cloud, while reviewing and benchmarking different
-container related technologies used on the fog nodes.
+For instance in~\cite{bellavista_feasibility_2017} the authors investigate the
+applicability of docker containers for fog computing. The work uses and extends
+the Open Source Kura framework to create IoT gateways that control the information
+flow between fog nodes and the cloud, while also reviewing and benchmarking
+different container related technologies used in the fog nodes.
 The focus of the work tends towards IoT computing, where tailored services run
 on fog nodes to gather data that is forwarded to to cloud for further processing.
 A similiar evaluation of docker containers for edge computing can be found in
 \cite{ismail_evaluation_2015}.
-The recently released  also addresses fog-node to cloud
-communication.
 
-Others works have contributed fog platforms for very specific use cases, e.g.
-a service architecture for an emergency alert system, where emergency alerts
-issued by fog nodes (i.e. end-user smart-phones) propagate to an ``appropriate''
-emergency department \cite{7134091}; or a so-called Adaptive Operations Platform
-to improve the effectiveness of applying equipment failure models in the context
-of industrial IoT. \cite{gazis_components_2015}.
+Others have contributed fog platforms for very specific use cases, e.g.
+an emergency alert system using smartphones that propagate alerts to nearby
+emergency departments \cite{7134091}; or an ``Adaptive Operations Platform''
+to effectively apply equipment failure models in the context of industrial
+IoT \cite{gazis_components_2015}.
+
 On the other hand there are implementations that address specific individual
 fog computing issues, like Dsouza et al. who propose a framework for
-policy management to authenticate the various actors in smart transportation
-system \cite{dsouza_policy-driven_2014}.
+policy management to authenticate the various actors in, e.g. smart
+transportation systems \cite{dsouza_policy-driven_2014}.
 
-Additionally, there are proprietary business solutions like Cisco's IOx or
-Google IoT cloud.
-\lukas{do we care or those?}
+Additionally, proprietary business \lukas{Is there an adjective for `... that costs money'?} solutions exist: Cisco IOx promotes a
+system that allows traditional Linux application development on
+Cisco IOS powered networking devices\cite{cisco_iox}.
+And Google recently released ``Google IoT cloud'', which sells a system for
+cloud based device management and a protocol bridge to connect edge nodes to,
+e.g. cloud analytic systems\cite{google_iot_core}.
 
 \lukas{Albert suggests to also reference \cite{belli_design_2015}}
 
-In contrast, Seattle does not only specify a flexible platform architecture,
+In contrast, Seattle does not only specify a flexible FOSS platform architecture,
 is also has over 8 years of experience of operating a general-purpose
 infrastructure used among others for network research and education.
 

@@ -13,7 +13,7 @@ and among members of the same group.
 % Then why/how do people trust each other in such a system?
 
 This gives rise to a set of components~\cite{Cappos2009},
-any of which is useful
+any of which useful
 by itself, that can be freely combined to implement various
 deployment models, from pure peer-to-peer operation up to a
 provisioned deployment by a dedicated operator. Furthermore,
@@ -24,7 +24,7 @@ We briefly introduce the default components below.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{figures/arch.pdf}
+  \includegraphics[width=\columnwidth]{figures/components.pdf}
   \caption{Architecture components of Seattle}
   \label{fig:arch}
 \end{figure}
@@ -59,8 +59,9 @@ so that one Seattle node can serve multiple experimenters.)
 \albert{Does NAT traversal!}
 
 The \textit{Device Manager} % (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
-is the device owner's interface to enable or disable this Seattle
-install, and choose the amount of resources that it may consume.
+is the device owner's interface to enable or disable a Seattle
+install, and choose the amount of resources that it may consume on the respective
+device.
 
 The \textit{Software Updater} keeps all components of the
 device software up to date. This concludes the overview of
@@ -90,7 +91,7 @@ Seattle's device software and an initial set of cryptographic
 keys controlling the sandboxes are shipped in the form of a bundled
 installer for the specific platform \gls{OS}.
 The \textit{Installer Builder} component is responsible for
-packaging the code and public keys.
+packaging and hosting the code and public keys.
 The installer builder allows experimenters to create their own
 custom installers, where they get to choose the public key or keys
 that are included in the installer package. Every custom installer
@@ -108,7 +109,7 @@ The default Seattle architecture also includes a
 key/value store that the resource manager and experiment manager
 can use to announce and retrieve information about sandboxes.
 For instance, a resource manager announces its contact information
-(such as its or a NAT forwarder's IP address and port number) under
+(such as its own or a NAT forwarder's IP address and port number) under
 the public keys of all currently authorized experimenters.
 The experiment manager retrieves the contact information by looking up
 the experimenter's public key at the lookup service, and then

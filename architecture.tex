@@ -60,6 +60,10 @@ parties to start or stop them, upload and download data, reset
 sandboxes, or transfer ownership. The sandboxes on one
 device might all have different authorized users if so desired,
 so that one Seattle node can serve multiple experimenters.
+Due to the heterogeneity encountered in today's networks,
+the Resource Manager also includes techniques to traverse
+\gls{NAT} gateways and firewalls as often found in end-user
+gateway routers.
 
 The \textit{Device Manager} % (installer with \texttt{--percentage}, start/stop scripts, uninstaller, softwareupdater): device owner retains control!
 is the device owner's interface to enable or disable a Seattle
@@ -118,6 +122,11 @@ The experiment manager retrieves the contact information by looking up
 the experimenter's public key at the lookup service, and then
 proceeds to contact every resource manager that hosts sandboxes
 that the experimenter can control.
+
+We run \textit{\gls{NAT} Relays} on some Seattle nodes that are
+accessible from the public Internet. Using these relays, firewalled
+or \gls{NAT}ted nodes have a common, public meeting point to
+direct Experiment Managers to.
 
 Lastly, Seattle provides a \textit{Clearinghouse} which is a
 centralized sandbox-sharing site. As motivated earlier,

@@ -1,12 +1,55 @@
 \section{Practical Deployment}\label{sec-deployment}
 
-Seattle is widely deployed in the field
+As mentioned previously, we have running implementations of all
+Seattle components on nodes on the public Internet, including
+many instances that we do not control or operate as they are
+contributed to our Clearinghouse's resource pool by volunteers.
+Apart from the numbers we report below, we do not have any
+insight on offspring projects that reuse our open-source software
+base, but set up their own independent deployments --- there is
+no tracking code in Seattle besides what an operating Clearinghouse
+needs to support the sandboxes it controls.
 
-"node count" (ahahaha)
+In terms of the current scale and size of Seattle, we report
+statistics from the \gls{IP} addresses contacting our Software
+Updater service. This service is contacted
+by all installations Seattle's main Installer Builder shipped
+to end-user devices, and reports downloads from over 40,000
+different \gls{IP} addresses.
+This metric is not perfect: it undercounts multiple devices behind
+a \gls{NAT} gateway, and overcounts devices that change their
+\gls{IP} address frequently (such as mobile nodes). However, it
+gives an impression of the scale of our deployment.
 
-contributors >100
+Attempting to reverse-resolve these \gls{IP} addresses to \gls{DNS}
+names yields no result for about 50\%; 30\% of names point belong
+to home Internet providers; 15\% of names indicate
+university machines (likely including those of students as they
+spend time on the campus). Note also that the number of online
+nodes (and thus sandboxes) varies over time, as device owners
+turn off or suspend their devices as they move or their daily
+routines start and end.
+Figure~\ref{fig:map} plots a world map of Seattle nodes, with the
+colors encoding the approximate node density in an area.
+The node locations were generated from GeoIP data.
+It is seen that Seattle has notable user bases outside of the
+United States (where its development originally started),
+particularly in Central Europe and China.
 
-institutions 32
+More than 4,000 experimenters have used Seattle's clearinghouse
+to request access to resources on remote devices. We attribute this
+to the fact that our Clearinghouse offers ten free sandboxes for
+every registered user, and that contributing own resources counts
+as a ``credit'' to use more remote sandboxes in turn.
+Resource credits have proven a valuable incentivation strategy
+to push the adoption of Seattle.
+
+While offering generous resources to bootstrap experiments,
+Seattle has also benefitted greatly from generous contributions
+of code, documentation, tutorials, and libraries from over 100
+contributors at 32 institutions all over the world.
+This is helped by
+FOSS -- contribs -- sensi
 
 \begin{figure}
   \centering

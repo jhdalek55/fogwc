@@ -43,23 +43,49 @@ Linux Containers.
 
 
 
+%\subsection{Network Heterogeneity Masking}
+%
+%Nodes behind firewalls or \gls{NAT} gateways are common in
+%today's networks. In order to make sandboxes on such nodes
+%accessible for experiment use, Seattle implements \gls{NAT}
+%traversal and locator--identifier split mechanisms.
+%For the first, we run custom \gls{NAT} relays on public Seattle nodes
+
+
 
 \subsection{Component Interface Implementation}
 
 At the core of flexibly addressing operational heterogeneity (see
 Section~\ref{sec-op-flex}) lie clearly-defined interfaces
-that use simple, mostly stateless protocols.
+that use simple, text-based, mostly stateless protocols.
+This has a few benefits. The code handling communications between
+components can be much simpler as parsing is easy to verify,
+even manually. Then, it is much easier to reimplement these protocols
+to interface with Seattle from other systems. Lastly, keeping
+and tracking state in a distributed fashion is a notoriously
+difficult problem which we attempt to avoid wherever possible.
 
-Postel's Robustness Principle~\cite[\S2.10]{rfc793}.
+For communication that requires a token of privilege to trigger
+an action at the remote side, control messages contain signatures
+constructed with the private key of the experimenter. A
+sandbox that is controlled by that experimenter knows the
+corresponding public key (as it downloaded a Seattle installer
+customized to contain this key previously). Only after checking
+the message signature, privileged operations such as starting
+or stopping the sandbox or transferring data to/from its
+local storage are permitted.
 
-
-\subsection{To Do}
-\albert{Rather ``Random Leftover Notes'' I guess.}
-
-Mention device manager and practical problems like NAT.
-
-Mention the clearinghouse because we have other clearinghouses
-to talk about later.
-
-\subsection{Community Contributions}
+Scripted (i.e. non-interactive) communications with the
+Clearinghouse, Installer Builder, and Software Updater all
+use \gls{HTTP} or \gls{HTTPS} in the form of an
+\acrshort{XML}-\acrshort{RPC} interface which further simplifies
+integration and simplification. Also, these interfaces
+follow what is known as Postel's Robustness
+Principle~\cite[\S2.10]{rfc793}, and are quite liberal in the
+data they accept from the remote side of the communication.
+This has practical relevance for some of the calls:
+the call parameters are treated as opaque and are not
+interpreted by the receiving instance. Thus, additional
+information not previously foreseen and designed into the
+protocol can still pass.
 
